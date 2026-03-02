@@ -7,5 +7,5 @@ from .models import Author
 class  AuthorSerializer(ModelSerializer):
     
     class Meta:
-        fields='all'
+        fields='__all__'
         model=Author

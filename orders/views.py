@@ -1,6 +1,6 @@
 from rest_framework import generics, permissions
 from .models import Order
-from .serializer import OrderSerializer, OrderCreateSerializer, OrderUpdateSerializer
+from .serializer import OrderSerializer 
 
 # Create your views here.
 
@@ -10,7 +10,7 @@ class OrderListCreateView(generics.ListCreateAPIView):
     
     def get_serializer_class(self):
         if self.request.method == 'POST':
-            return OrderCreateSerializer
+            return OrderSerializer
         return OrderSerializer
 
     def get_queryset(self):
@@ -24,7 +24,7 @@ class OrderDetailView(generics.RetrieveUpdateAPIView):
     
     def get_serializer_class(self):
         if self.request.method in ['PUT', 'PATCH']:
-            return OrderUpdateSerializer
+            return OrderSerializer
         return OrderSerializer
 
     def get_queryset(self):
